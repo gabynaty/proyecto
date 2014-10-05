@@ -3,8 +3,10 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
 	<title>mi juego</title>
+	<link href="/static/style1.css" rel="stylesheet" type="text/css" />
+	<link href="/static/fonts.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
+<body background="/static/imagenes/fondo2.jpg">
 	<!--<div>esta es la base.html del proyecto</div>
 	<div><a href="/user/login/">Iniciar Sesión</a></div>-->
 	
@@ -12,9 +14,39 @@
 
 
 <header>
-	
-	<a href="/user/login/">iniciar sesion</a>
+	<nav>
+		<ul>
+			
+			<li><a href="/user/login/"><span class="primero"><i class="icon icon-home"></i></span>login</a></li>
+			<li><a href="#"><span class="segundo"><i class="icon icon-pencil2"></i></span>registarse</a>
+
+				<ul>
+					<li> <a href="#">item 1</a></li>
+					<li> <a href="#">item 1</a></li>
+					<li> <a href="#">item 1</a></li>
+					<li> <a href="#">item 1</a></li>
+				</ul>
+			</li>
+			<li><a href="#"><span class="tercero"><i class="icon icon-home"></i></span>inicio</a></li>
+			<li><a href="/salir/"><span class="cuarto"><i class="icon icon-close"></i></span>inicio</a></li>
+
+
+
+
+
+
+
+		</ul>		
+
+	</nav>
 </header>
+<div id="contenido">
+
+	 	{% block cuerpo %}
+		{% endblock cuerpo %}
+
+	
+</div>
 
 </body>
 </html>
