@@ -7,4 +7,11 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^', include('juego.apps.autenticacion.urls')),
+
+
+
+    url(r'^user/login/$', 'juego.apps.autenticacion.views.loguet_in'),
+    url(r'^salir/$', 'juego.apps.autenticacion.views.loguet_out'),
+
 )

@@ -60,14 +60,13 @@ WSGI_APPLICATION = 'juego.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':'juego',
-        'USER':'',
+        'NAME': 'juego',
+        'USER':'root',
         'PASSWORD':'',
-        'PORT':'',
-
+        'HOST':'127.0.0.1',
+        'PORT':'3306',
     }
 }
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
