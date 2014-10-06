@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block cuerpo %}
+
+		 
+	<h3>
+			            <form action="" method="post">{% csrf_token %}
+			               <table>
+			                {{ registro }}
+			            	</table>
+			             	<input type="submit" value="registrarse"/>
+			             	<a href="/user/login/">cancelar</a>
+			            </form>
+	</h3>
+{% endblock cuerpo %}
