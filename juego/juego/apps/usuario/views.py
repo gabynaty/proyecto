@@ -10,10 +10,26 @@ from forms import UsuarioForm
 def Registro(request):
   if request.method=='POST':
     formulario=UserCreationForm(request.POST)
+    tipou=request.POST['stipo']
     usuario=request.POST['username']
     if formulario.is_valid():
       formulario.save()
+      u=User.objects.get(username=usuario)
+      if tipou[0] == '1':
+        u.is_superuser=True
+        if tipou[1] == '1':
+          u.is_staff=True
+        else:
+          u.is_staff=False
+      else:
+        u.is_staff=True
+        if tipou[1] == '1':
+          u.is_staff=True
+        else:
+          u.is_staff=False
+      u.save()
       return HttpResponseRedirect('/user/login/')
   else:
     formulario=UserCreationForm()
   return render_to_response('registrarse.html',{'registro':formulario},context_instance=RequestContext(request))
+
