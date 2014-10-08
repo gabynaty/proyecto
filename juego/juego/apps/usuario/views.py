@@ -3,13 +3,13 @@ from django.template import RequestContext
 from django.http import HttpResponseRedirect,HttpResponse
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from forms import UsuarioForm
+from forms import *
 
 # Create your views here.
 
 def Registro(request):
   if request.method=='POST':
-    formulario=UserCreationForm(request.POST)
+    formulario=fusuario(request.POST)
     tipou=request.POST['stipo']
     usuario=request.POST['username']
     if formulario.is_valid():
@@ -30,6 +30,6 @@ def Registro(request):
       u.save()
       return HttpResponseRedirect('/user/login/')
   else:
-    formulario=UserCreationForm()
+    formulario=fusuario()
   return render_to_response('registrarse.html',{'registro':formulario},context_instance=RequestContext(request))
 

@@ -10,6 +10,10 @@ from django.contrib.auth.decorators import login_required, permission_required
 def index(request):
   return render_to_response("index.html",{},RequestContext(request))
 
+
+
+
+
 def loguet_in(request):
     if not request.user.is_anonymous():
          return render_to_response('user/privado.html', context_instance=RequestContext(request))
@@ -37,6 +41,7 @@ def loguet_in(request):
     else:
         formulario = AuthenticationForm()
     return render_to_response('user/user_login.html',{'formulario':formulario}, context_instance=RequestContext(request))
+
 
 def loguet_out(request):
     logout(request)

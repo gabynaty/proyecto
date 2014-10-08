@@ -16,8 +16,8 @@
 <header>
 	<nav>
 		<ul>
+			{% if user.is_authenticated %}
 			
-			<li><a href="/user/login/"><span class="primero"><i class="icon icon-home"></i></span>login</a></li>
 			<li><a href="/registrarse/"><span class="segundo"><i class="icon icon-pencil2"></i></span>registarse</a>
 
 				<ul>
@@ -28,20 +28,27 @@
 				</ul>
 			</li>
 			<li><a href="#"><span class="tercero"><i class="icon icon-home"></i></span>inicio</a></li>
-			<li><a href="/salir/"><span class="cuarto"><i class="icon icon-close"></i></span>inicio</a></li>
+			<li><a href="/salir/"><span class="cuarto"><i class="icon icon-close"></i></span>Cerrar Sesion</a></li>
+
+			{% else %}
+
+			<li><a href="/user/login/"><span class="primero"><i class="icon icon-home"></i></span>Iniciar Sesion</a></li>
+
+
+			{% endif%}
 
 
 
 
 
-
-
-		</ul>		
+		</ul>	
 
 	</nav>
 </header>
 <div id="contenido">
-
+<ul>
+			<li><h1>Usuario {{ user.username|upper }}</h1></li>
+		</ul>	
 	 	{% block cuerpo %}
 		{% endblock cuerpo %}
 
