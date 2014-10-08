@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'juego.apps.autenticacion',
     'juego.apps.usuario',
+    'juego.apps.preguntas',
 )
 
 MIDDLEWARE_CLASSES = (

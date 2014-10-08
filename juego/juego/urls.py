@@ -14,6 +14,11 @@ urlpatterns = patterns('',
     url(r'^user/login/$', 'juego.apps.autenticacion.views.loguet_in'),
     url(r'^salir/$', 'juego.apps.autenticacion.views.loguet_out'),
 
-     url(r'^registrarse/$', 'juego.apps.usuario.views.Registro'),
+    url(r'^registrarse/$', 'juego.apps.usuario.views.Registro'),
+
+
+ 	url(r'^preguntas/$', 'juego.apps.preguntas.views.pregunta'),
+
+
 
 )
