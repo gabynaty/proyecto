@@ -18,7 +18,6 @@ urlpatterns = patterns('',
 
 
  	url(r'^preguntas/$', 'juego.apps.preguntas.views.pregunta'),
-
-
+	url(r'^respuestas/$', 'juego.apps.preguntas.views.respuesta'),
 
 )
