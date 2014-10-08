@@ -8,11 +8,12 @@ class  Pregunta(models.Model):
 	pregunta=models.CharField(max_length='500',null=True)
 	fecha=models.DateField(auto_now=True)
 	def __unicode__(self):
-		return "%s %s"%(self.pregunta)
+		return "%s %s"%(self.pregunta,self.fecha)
 
 
 
 class  Respuesta(models.Model):
+	pregunta=models.ForeignKey(Pregunta)
 	respuesta1=models.CharField(max_length='500',null=True)
 	respuesta2=models.CharField(max_length='500',null=True)
 	respuesta3=models.CharField(max_length='500',null=True)
